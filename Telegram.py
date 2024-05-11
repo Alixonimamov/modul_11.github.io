@@ -5,13 +5,15 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BOT_TOKEN=os.getenv("BOT_TOKEN")
-bot=Bot(token=BOT_TOKEN)
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+bot = Bot(token=BOT_TOKEN)
+
 
 async def main():
     print("Starting......")
     from Handlers import dp
     await dp.start_polling(bot)
 
-if __name__ == "main":
+
+if __name__ == "__main__":
     asyncio.run(main())
