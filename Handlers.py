@@ -30,7 +30,7 @@ async def order(msg: Message):
         payload="Ichki malumot",
         prices=[
             LabeledPrice(label="Product1", amount=200000),
-            LabeledPrice(label="Product2", amount=100000)
+            LabeledPrice(label="Product2", amount=1000000)
         ],
     )
 
