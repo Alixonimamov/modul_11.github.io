@@ -4,7 +4,6 @@ body {
     font-size: 18px;
     color: var(--tg-theme-text-color);
     background: var(--tg-theme-bg-color);
-
 }
 .container {
     max-width: 400px;
@@ -16,24 +15,26 @@ body {
 }
 .img {
     width: 150px;
+    height: 150px;
+    max-height: 100px;
 }
 .item {
     text-align: center;
 }
-
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border: none;
-  background: rgb(248, 168, 24);
-  border-radius: 10px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 700;
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	background: rgb(248, 168, 24);
+	border-radius: 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
 
-  transition: background .2s linear;
+	transition: background .2s linear;
 }
 
 .num{
     display: none;
 }
+

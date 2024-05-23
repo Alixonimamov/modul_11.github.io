@@ -9,7 +9,7 @@ tg.MainButton.color = "#FC3005"
 let item1 = ""
 let n_count1 = 0
 
-
+#burger
 let count1 = document.getElementById("count1");
 let rbtn1 = document.getElementById("rbtn1");
 let abtn1 = document.getElementById("abtn1");
@@ -33,6 +33,7 @@ rbtn1.addEventListener("click", function () {
 });
 // ------------------2--------------------
 
+#Kfc
 count2 = document.getElementById("count2");
 rbtn2 = document.getElementById("rbtn2");
 abtn2 = document.getElementById("abtn2");
@@ -60,6 +61,7 @@ abtn2.addEventListener("click", function () {
 
 // ------------------3--------------------
 
+#Lavash
 count3 = document.getElementById("count3");
 rbtn3 = document.getElementById("rbtn3");
 abtn3 = document.getElementById("abtn3");
@@ -88,6 +90,7 @@ abtn3.addEventListener("click", function () {
 
 // -------------------4-------------------
 
+#Pizza
 count4 = document.getElementById("count4");
 rbtn4 = document.getElementById("rbtn4");
 abtn4 = document.getElementById("abtn4");
@@ -115,8 +118,35 @@ abtn4.addEventListener("click", function () {
     tg.MainButton.show();
 });
 
+#Sushi
+count5 = document.getElementById("count4");
+rbtn5 = document.getElementById("rbtn4");
+abtn5 = document.getElementById("abtn4");
+let item5 = "";
+let n_count5 = 0;
+rbtn4.addEventListener("click", function () {
+    if (n_count5 > 0) {
+        count5.innerText = n_count5 -= 1;
+    }
+
+    count5.style.display = "inline-block";
+    item4 = "PIZZA/50000/" + count4.innerText;
+
+    tg.MainButton.setText("Оплата");
+    tg.MainButton.show();
+});
+
+
+abtn4.addEventListener("click", function () {
+    count4.innerText = n_count5 += 1;
+    count4.style.display = "inline-block";
+    item4 = "PIZZA/50000/" + count4.innerText;
+
+    tg.MainButton.setText("Оплата");
+    tg.MainButton.show();
+});
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    data = item1 + "|" + item2 + "|" + item3 + "|" + item4
+    data = item1 + "|" + item2 + "|" + item3 + "|" + item4+
     tg.sendData(data);
-});
+})
