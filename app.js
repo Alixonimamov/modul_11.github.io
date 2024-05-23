@@ -19,7 +19,7 @@ abtn1.addEventListener("click", function () {
     count1.style.display = "inline-block";
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
-    item1 = "Burger/12000/" + count1.innerText;
+    item1 = "Burger/12.000/" + count1.innerText;
 
 });
 rbtn1.addEventListener("click", function () {
@@ -27,7 +27,7 @@ rbtn1.addEventListener("click", function () {
         count1.innerText = n_count1 -= 1;
     }
     count1.style.display = "inline-block";
-    item1 = "Burger/12000/" + count1.innerText;
+    item1 = "Burger/12.000/" + count1.innerText;
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
 });
@@ -44,7 +44,7 @@ rbtn2.addEventListener("click", function () {
     }
 
     count2.style.display = "inline-block";
-    item2 = "KFC/120000/" + count2.innerText;
+    item2 = "KFC/120.000/" + count2.innerText;
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
 });
@@ -53,7 +53,7 @@ rbtn2.addEventListener("click", function () {
 abtn2.addEventListener("click", function () {
     count2.innerText = n_count2 += 1;
     count2.style.display = "inline-block";
-    item2 = "KFC/120000/" + count2.innerText;
+    item2 = "KFC/120.000/" + count2.innerText;
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
 });
@@ -71,7 +71,7 @@ rbtn3.addEventListener("click", function () {
     }
 
     count3.style.display = "inline-block";
-    item3 = "LAVASH/40000/" + count3.innerText;
+    item3 = "LAVASH/40.000/" + count3.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -81,7 +81,7 @@ rbtn3.addEventListener("click", function () {
 abtn3.addEventListener("click", function () {
     count3.innerText = n_count3 += 1;
     count3.style.display = "inline-block";
-    item3 = "LAVASH/40000/" + count3.innerText;
+    item3 = "LAVASH/40.000/" + count3.innerText;
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
 });
@@ -99,7 +99,7 @@ rbtn4.addEventListener("click", function () {
     }
 
     count4.style.display = "inline-block";
-    item4 = "PIZZA/50000/" + count4.innerText;
+    item4 = "PIZZA/50.000/" + count4.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -109,7 +109,7 @@ rbtn4.addEventListener("click", function () {
 abtn4.addEventListener("click", function () {
     count4.innerText = n_count4 += 1;
     count4.style.display = "inline-block";
-    item4 = "PIZZA/50000/" + count4.innerText;
+    item4 = "PIZZA/50.000/" + count4.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -128,7 +128,7 @@ rbtn4.addEventListener("click", function () {
     }
 
     count5.style.display = "inline-block";
-    item5 = "SUSHI/200000/" + count5.innerText;
+    item5 = "SUSHI/200.000/" + count5.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -138,7 +138,7 @@ rbtn4.addEventListener("click", function () {
 abtn5.addEventListener("click", function () {
     count5.innerText = n_count5 += 1;
     count5.style.display = "inline-block";
-    item5 = "SUSHI/200000/" + count5.innerText;
+    item5 = "SUSHI/200.000/" + count5.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -156,7 +156,7 @@ rbtn4.addEventListener("click", function () {
     }
 
     count6.style.display = "inline-block";
-    item6 = "RAMEN/85000/" + count5.innerText;
+    item6 = "RAMEN/85.000/" + count5.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -166,7 +166,7 @@ rbtn4.addEventListener("click", function () {
 abtn6.addEventListener("click", function () {
     count6.innerText = n_count6 += 1;
     count6.style.display = "inline-block";
-    item6 = "RAMEN/85000/" + count5.innerText;
+    item6 = "RAMEN/85.000/" + count5.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -184,7 +184,7 @@ rbtn4.addEventListener("click", function () {
     }
 
     count7.style.display = "inline-block";
-    item7 = "Coca Cola/15000/" + count7.innerText;
+    item7 = "Coca Cola/15.000/" + count7.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -194,7 +194,7 @@ rbtn4.addEventListener("click", function () {
 abtn7.addEventListener("click", function () {
     count7.innerText = n_count7 += 1;
     count7.style.display = "inline-block";
-    item7 = "Coca Cola/15000/" + count7.innerText;
+    item7 = "Coca Cola/15.000/" + count7.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -212,7 +212,7 @@ rbtn4.addEventListener("click", function () {
     }
 
     count8.style.display = "inline-block";
-    item8 = "Pepsi/12000/" + count7.innerText;
+    item8 = "Pepsi/12.000/" + count7.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
@@ -222,7 +222,7 @@ rbtn4.addEventListener("click", function () {
 abtn8.addEventListener("click", function () {
     count8.innerText = n_count8 += 1;
     count8.style.display = "inline-block";
-    item8 = "Pepsi/12000/" + count8.innerText;
+    item8 = "Pepsi/12.000/" + count8.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
