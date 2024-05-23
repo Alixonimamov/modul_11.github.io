@@ -116,6 +116,35 @@ abtn4.addEventListener("click", function () {
 });
 
 
+
+count5 = document.getElementById("count4");
+rbtn5 = document.getElementById("rbtn4");
+abtn5 = document.getElementById("abtn4");
+let item5 = "";
+let n_count5 = 0;
+rbtn4.addEventListener("click", function () {
+    if (n_count5 > 0) {
+        count4.innerText = n_count5 -= 1;
+    }
+
+    count4.style.display = "inline-block";
+    item5 = "SUSHI/200000/" + count5.innerText;
+
+    tg.MainButton.setText("Оплата");
+    tg.MainButton.show();
+});
+
+
+abtn5.addEventListener("click", function () {
+    count4.innerText = n_count5 += 1;
+    count5.style.display = "inline-block";
+    item5 = "SUSHI/200000/" + count4.innerText;
+
+    tg.MainButton.setText("Оплата");
+    tg.MainButton.show();
+});
+
+
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     data = item1 + "|" + item2 + "|" + item3 + "|" + item4
     tg.sendData(data);
