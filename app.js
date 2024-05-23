@@ -201,7 +201,33 @@ abtn7.addEventListener("click", function () {
 })
 
 
+count8 = document.getElementById("count8");
+rbtn8 = document.getElementById("rbtn8");
+abtn8 = document.getElementById("abtn8");
+let item8 = "";
+let n_count8 = 0;
+rbtn4.addEventListener("click", function () {
+    if (n_count8 > 0) {
+        count8.innerText = n_count8 -= 1;
+    }
+
+    count8.style.display = "inline-block";
+    item8 = "Pepsi/12000/" + count7.innerText;
+
+    tg.MainButton.setText("Оплата");
+    tg.MainButton.show();
+});
+
+
+abtn8.addEventListener("click", function () {
+    count8.innerText = n_count8 += 1;
+    count8.style.display = "inline-block";
+    item8 = "Pepsi/12000/" + count8.innerText;
+
+    tg.MainButton.setText("Оплата");
+    tg.MainButton.show();
+})
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    data = item1 + "|" + item2 + "|" + item3 + "|" + item4 + "|" +item5+ "|" +item6 +"|" +item7
+    data = item1 + "|" + item2 + "|" + item3 + "|" + item4 + "|" +item5+ "|" +item6 +"|" +item7 +"|" +item8
     tg.sendData(data);
 });
