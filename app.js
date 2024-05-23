@@ -137,16 +137,16 @@ rbtn4.addEventListener("click", function () {
 });
 
 
-abtn4.addEventListener("click", function () {
-    count4.innerText = n_count5 += 1;
-    count4.style.display = "inline-block";
-    item4 = "PIZZA/50000/" + count4.innerText;
+abtn5.addEventListener("click", function () {
+    count5.innerText = n_count5 += 1;
+    count5.style.display = "inline-block";
+    item5 = "PIZZA/50000/" + count5.innerText;
 
     tg.MainButton.setText("Оплата");
     tg.MainButton.show();
 });
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
-    data = item1 + "|" + item2 + "|" + item3 + "|" + item4+
+    data = item1 + "|" + item2 + "|" + item3 + "|" + item4+ "|" + item5+ "|"
     tg.sendData(data);
 })
