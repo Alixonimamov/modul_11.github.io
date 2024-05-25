@@ -29,8 +29,8 @@ async def order(msg: Message):
         currency="UZS",
         payload="Ichki malumot",
         prices=[
-            LabeledPrice(label="Product1", amount=200000),
-            LabeledPrice(label="Product2", amount=100000)
+            LabeledPrice(label="Product1", amount=2000000),
+            LabeledPrice(label="Product2", amount=1000000)
         ],
     )
 
@@ -40,33 +40,31 @@ async def pre_checkout_query(checkout_query: PreCheckoutQuery):
     await bot.answer_pre_checkout_query(checkout_query.id, ok=True)
 
 
-@dp.message(F.func(lambda msg: msg.web_app_data.data))
+@dp.message(F.func(lambda msg: msg.web_app_data.data if msg.web_app_data else None))
 async def get_btn(msg: Message):
     text = msg.web_app_data.data
-    print(text)
     product_data = text.split("|")
     products = {}
     for i in range(len(product_data)):
         if len(product_data[i].split("/")) >= 3:
             title = product_data[i].split('/')[0]
             price = product_data[i].split('/')[1]
-            quantity = int(product_data[i].split('/')[2])
+            quantity = product_data[i].split('/')[2]
             product = {
-                "Nomi": title,
-                "Price": int(price),
-                "Quantity": int(quantity)
+                "title": title,
+                "price": int(price),
+                "quantity": int(quantity)
             }
             products[i] = product
     print(products)
     await bot.send_invoice(
         chat_id=msg.chat.id,
-        title="To'lov",
-        description="Telegram bot orqali to'lov!",
+        title="Оплата",
+        description="Оплата через Telegram bot",
         provider_token=PROVIDER_TOKEN,
         currency="UZS",
         payload="Ichki malumot",
-        prices=[LabeledPrice(
-            label=f"{product['Nomi']} ({product['Quantity']})",
-            amount=product["Price"]
-        ) for product in products.values()],
+        prices=[LabeledPrice(label=f"{product['title']}", amount=(product["quantity"] * product["price"]) * 100) for
+                product in
+                products.values()],
     )
