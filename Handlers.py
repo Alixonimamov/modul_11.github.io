@@ -16,23 +16,10 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def start(msg: Message):
-    await msg.answer("Salom", reply_markup=app_kb)
+    await msg.answer("Здраствуйте привествуем нашем ресторане Atomix", reply_markup=app_kb)
 
 
-@dp.message(Command("pay"))
-async def order(msg: Message):
-    await bot.send_invoice(
-        chat_id=msg.chat.id,
-        title="Telegram bot orqali to'lov!",
-        description="Telegram bot orqali to'lov qilishni o'rganyammiz!",
-        provider_token=PROVIDER_TOKEN,
-        currency="UZS",
-        payload="Ichki malumot",
-        prices=[
-            LabeledPrice(label="Product1", amount=2000000),
-            LabeledPrice(label="Product2", amount=1000000)
-        ],
-    )
+
 
 
 @dp.pre_checkout_query()
@@ -64,7 +51,22 @@ async def get_btn(msg: Message):
         provider_token=PROVIDER_TOKEN,
         currency="UZS",
         payload="Ichki malumot",
-        prices=[LabeledPrice(label=f"{product['title']}", amount=(product["quantity"] * product["price"]) * 100) for
+        prices=[LabeledPrice(label=f"{product['title']}({product['quantity']})", amount=(product["quantity"] * product["price"]) * 100) for
                 product in
                 products.values()],
+        max_tip_amount=5000000,
+        suggested_tip_amounts=[500000, 1000000, 1500000],
+        need_name=True,
+        need_phone_number=True,
+        need_shipping_address=True
     )
+
+@dp.pre_checkout_query()
+async def pre_checkout(query: PreCheckoutQuery):
+    await bot.answer_pre_checkout_query(query.id, ok=True)
+
+
+@dp.message(F.func(lambda msg: msg.successful_payment if msg.successful_payment else None))
+async def successful_payment(msg: Message):
+    print(msg.successful_payment)
+    await msg.answer("Ваш заказ принят. Администратор свяжется с вами.")
