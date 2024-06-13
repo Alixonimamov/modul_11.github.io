@@ -14,7 +14,7 @@ body {
     grid-template-rows: 200px 200px 200px;
 }
 .img {
-    width: 150px;
+    width: 100px;
     height: 150px;
     max-height: 100px;
 }
